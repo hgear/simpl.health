@@ -11,5 +11,15 @@ namespace simpl.health.Universes
         {
 
         }
+
+        public Validation Find (string FieldName)
+        {
+            return this.Find(f => f.Field.Name == FieldName);
+        }
+
+        public UniverseField FindField (string FieldName)
+        {
+            return this.Find(f => f.Field.Name == FieldName).Field;
+        }
     }
 }

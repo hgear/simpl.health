@@ -55,10 +55,7 @@ namespace simpl.health
                         {
                             for (columnNum = 1; columnNum <= columnNames.Count(); columnNum ++)
                             {
-                                if (rowNum == 2 && columnNum == 9)
-                                {
-                                    int test1 = 1;
-                                }
+
                                 var columnValue = worksheet.Cells[rowNum, columnNum].Value;
                                 /*if (columnNum == 9)
                                 {

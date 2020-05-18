@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace simpl.health.Universes
 {
     public class UniverseField
     {
         public int FieldId { get; set; }
-        public string Name {get; set;}
+        public string Name { get; set; }
         public string Value { get; set; }
+        public string OriginalValue { get; set; }
         public bool IsRequired { get; set; }
         public int MaxFieldLength { get; set; }
         public int FieldOrder { get; set; }
@@ -13,10 +16,11 @@ namespace simpl.health.Universes
         public bool WasFieldCorrected { get; set; }
         public string FieldAutoCorrectedMessage { get; set; }
         public bool IgnoreCase { get; internal set; }
-        public string DefaultPossibleValues { get; set; }
+        public DateTime? DateValue { get; set; }
+        public List<string> DefaultPossibleValues { get; set; }
 
         public UniverseField(string fieldName, bool isRequired,
-            int maxFieldLength, int fieldOrder, Type fieldType, bool ignoreCase = false, string defaultPossibleValue = "")
+            int maxFieldLength, int fieldOrder, Type fieldType, bool ignoreCase = false, List<string> defaultPossibleValue = null)
         {
             Name = fieldName;
             IsRequired = isRequired;
